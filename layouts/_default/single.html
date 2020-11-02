@@ -1,0 +1,30 @@
+{{ define "main" }}
+
+<section class="rad-showcase rad-showcase--index rad-animation-group rad-fade-down">
+  <div class="container">
+    <div class="col-12 col-sm-12 col-md-8 col-lg-7 col-xl-6">
+      <h1 class="display-1">
+        {{ .Title | markdownify }}
+        <br />
+        {{ with .Params.subtitle }}
+        <span>{{ . | markdownify }}</span>
+        {{ end }}
+      </h1>
+      <p class="lead">
+        {{ .Content }}
+      </p>
+    </div>
+    {{ with .Params.image }}
+    <div class="rad-showcase__bg rad-showcase__bg--mobile">
+      <img
+        class="lozad img-responsive"
+        src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+        data-src="{{ .x | absURL }}"
+        alt="{{ .alt }}"
+      />
+    </div>
+    {{ end }}
+  </div>
+</section>
+
+{{ end }}
