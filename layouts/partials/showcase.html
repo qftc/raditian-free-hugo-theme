@@ -20,7 +20,7 @@
           >
         </h1>
         <p class="lead">
-          {{ .Site.Data.homepage.showcase.description | safeHTML }}
+          {{ .Site.Data.homepage.showcase.description | markdownify | safeHTML }}
         </p>
         <a
           href="{{ .Site.Data.homepage.showcase.button.URL | absURL }}"
